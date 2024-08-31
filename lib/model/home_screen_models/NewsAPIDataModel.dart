@@ -34,7 +34,7 @@ class NewsApiDataModel {
 
 class Article {
   Source? source;
-  dynamic author;
+  String? author;
   String? title;
   String? description;
   String? url;

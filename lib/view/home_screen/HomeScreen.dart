@@ -29,11 +29,22 @@ class _HomeScreenState extends State<HomeScreen>
 
     return Scaffold(
       body: ListView.builder(
+          itemCount: homeProvider.newsData?.articles?.length ?? 0,
           itemBuilder: (context, index) => Container(
             child: Center(
-              child: Text("data"),
+              child: Text(homeProvider.newsData?.articles?[index].title.toString() ?? "No Data"),
             ),
           )),
+      // Consumer<HomeScreenController>(
+      //   builder: (context, value,child) => ListView.builder(
+      //     itemCount: value.newsData!.articles!.length ?? 0,
+      //       itemBuilder: (context, index) => Container(
+      //         child: Center(
+      //           child: Text(value.newsData!.articles![index].title.toString() ?? "No Data"),
+      //         ),
+      //       )),
+      //
+      // ),
     );
   }
 }
